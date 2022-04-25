@@ -1,0 +1,70 @@
+{
+	"Spots": {
+		"items": [
+			{
+				"pos": "37.622882;55.755202;0",
+				"tooltip": "Moscow",
+				"type": "Inactive",
+				"text": "12345"
+
+			},
+			{
+				"pos": "77.1024902;28.7040592;0",
+				"tooltip": "Delhi",
+				"type":"Success"
+			},
+			{
+				"pos": "-74.013327;40.705395;0",
+				"tooltip": "New York",
+				"type": "Error",
+				"text": "1"
+			},
+			{
+				"pos": "116.407072;39.906235;0",
+				"tooltip": "Beijing",
+				"type": "Warning",
+				"text": "123"
+			}
+		], 
+		"regionProperties" :
+		[
+			{ "code": "DE", "region" : "Germany" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":true },
+			{ "code": "CZ", "region" : "Czech Republic" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
+			{ "code": "PL", "region" : "Poland" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
+			{ "code": "SK", "region" : "Slovakia" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
+			{ "code": "HU", "region" : "Hungary" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
+			{ "code": "AT", "region" : "Austria" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
+			{ "code": "SI", "region" : "Slovenia" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
+			{ "code": "CH", "region" : "Switzerland" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
+			{ "code": "LI", "region" : "Liechtenstein" , "color": "rgb(92,186,230)",  "text": "Central Europe" },
+			
+			{ "code": "EE", "region" : "Estonia" , "color": "rgb(182,217,87)", "text": "Eastern Europe" },
+			{ "code": "LV", "region" : "Latvia" , "color": "rgb(182,217,87)",  "text": "Eastern Europe" },
+			{ "code": "LT", "region" : "Lithuania" , "color": "rgb(182,217,87)",  "text": "Eastern Europe"},
+			{ "code": "BY", "region" : "Belarus" , "color": "rgb(182,217,87)",  "text": "Eastern Europe"},
+			{ "code": "RU", "region" : "Russia" , "color": "rgb(182,217,87)",  "text": "Eastern Europe"},
+			{ "code": "UA", "region" : "Ukraine" , "color": "rgb(182,217,87)",  "text": "Eastern Europe"},
+			
+			
+			{ "code": "PT", "region" : "Portugal" , "color": "rgb(250,195,100)", "text": "Southern Europe" },
+			{ "code": "ES", "region" : "Spain" , "color": "rgb(250,195,100)",  "text": "Southern Europe"},
+			{ "code": "IT", "region" : "Italy" , "color": "rgb(250,195,100)",  "text": "Southern Europe"},
+			{ "code": "GR", "region" : "Greece" , "color": "rgb(250,195,100)",  "text": "Southern Europe"},
+			{ "code": "MK", "region" : "Macedonia" , "color": "rgb(250,195,100)",  "text": "Southern Europe"},
+		
+			   { "code": "IE", "region" : "Ireland" , "color": "rgb(140,211,255)",  "text": "Western Europe" },
+			   { "code": "GB", "region" : "United Kingdom" , "color": "rgb(140,211,255)",  "text": "Western Europe" },
+			   { "code": "FR", "region" : "France" , "color": "rgb(140,211,255)",  "text": "Western Europe" },
+			   { "code": "BE", "region" : "Belgium" , "color": "rgb(140,211,255)",  "text": "Western Europe" },
+			   { "code": "NL", "region" : "Netherlands" , "color": "rgb(140,211,255)",  "text": "Western Europe" },
+			   { "code": "LU", "region" : "Luxembourg" , "color": "rgb(140,211,255)",  "text": "Western Europe" }
+		],
+"LegendItems" :
+	[
+		{ "color" : "rgb(92,186,230)",  "text": "Central Europe" },
+		{ "color" : "rgb(182,217,87)",  "text": "Eastern Europe" },
+		{ "color" : "rgb(250,195,100)",  "text": "Southern Europe" },
+		{ "color" : "rgb(140,211,255)",  "text": "Western Europe" }
+	]	
+	}
+}

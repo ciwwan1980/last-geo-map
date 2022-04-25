@@ -1,0 +1,81 @@
+<mvc:View 
+controllerName="GeoMapSpots.App"
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:commons="sap.ui.commons"
+xmlns="sap.m" 
+xmlns:vbm="sap.ui.vbm" 
+xmlns:l="sap.ui.layout" 
+height="100%"
+displayBlock="true">
+	<l:FixFlex class="fixFlexFixedSize">
+		<l:fixContent>
+			<Panel expandable="true" 
+				headerText="Description">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Description" />
+						<ToolbarSpacer />
+						<Button id="btnLegend" icon="sap-icon://legend" press="onPressLegend"
+							tooltip="Hide legend" />
+						<Button id="btnResize" icon="sap-icon://resize" press="onPressResize"
+							tooltip="Minimize" />
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<VBox class="sapUiTinyMargin">
+						<Text
+					text="Use spots to visualize specific locations on the map. There are five different types of spots: The default blue spot without any semantic and spots with the 4 semantic colors. All spots are available with and without icon, and number badges for 1-, 3- and 5 digits.
+							The orange and red spots are bigger than the other ones since a bad status is often more important than a neutral one." />
+						<Text class="sapUiTinyMarginTop"  />
+
+					</VBox>
+				</content>
+			</Panel>
+		</l:fixContent>
+
+
+		<l:flexContent>
+
+			<vbm:AnalyticMap id="vbi" width="100%" 
+				height="100%" initialZoom="1" regionClick="onLegendItemClick" >
+				<vbm:resources>
+					<vbm:Resource name="PinGreen.png"
+					   src="images/green.png">
+					</vbm:Resource>
+					<vbm:Resource name="PinGrey.png"
+					   src="images/gray.png">
+					</vbm:Resource>
+					<vbm:Resource name="PinOrange.png"
+					   src="images/orange.png">
+					</vbm:Resource>
+					<vbm:Resource name="PinRed.png"
+					   src="images/red.png">
+					</vbm:Resource>
+				  </vbm:resources>
+		
+					<vbm:Spots click="onClickItem" posChangeable="true"
+						scaleChangeable="false" contextMenu="onContextMenuItem" 
+						items="{/Spots/items}">
+						<vbm:items>
+							<vbm:Spot id="Spot" position="{pos}" tooltip="{tooltip}"
+								type="{type}" text="{text}" contentOffset="{contentOffset}"
+								click="onClickSpot" >
+							</vbm:Spot>
+						</vbm:items>
+					</vbm:Spots>
+		
+		
+				<vbm:legend  items="{/LegendItems}" >
+				<vbm:Legend id="legend" caption="Legend" click="onLegendClick">
+					<vbm:LegendItem color= "rgb(92,186,230)"  text="Central Europe" />
+					<vbm:LegendItem  color=  "rgb(182,217,87)" text="Eastern Europe"  />
+					<vbm:LegendItem color=  "rgb(250,195,100)" text= "Southern Europe" />
+					<vbm:LegendItem color=  "rgb(140,211,255)" text= "Western Europe" />
+					
+				</vbm:Legend>
+			</vbm:legend>
+			
+			</vbm:AnalyticMap>
+		</l:flexContent>
+	</l:FixFlex>
+</mvc:View>
