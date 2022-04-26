@@ -37,36 +37,32 @@ displayBlock="true">
 		<l:flexContent>
 
 			<vbm:AnalyticMap id="vbi" width="100%" 
-				height="100%" initialZoom="1" regionClick="onLegendItemClick" >
-				<vbm:resources>
-					<vbm:Resource name="PinGreen.png"
-					   src="images/green.png">
-					</vbm:Resource>
-					<vbm:Resource name="PinGrey.png"
-					   src="images/gray.png">
-					</vbm:Resource>
-					<vbm:Resource name="PinOrange.png"
-					   src="images/orange.png">
-					</vbm:Resource>
-					<vbm:Resource name="PinRed.png"
-					   src="images/red.png">
-					</vbm:Resource>
-				  </vbm:resources>
+				height="100%" initialZoom="1" 
+				regions="{ViewModel>/regionProperties}" 
+			 >
 		
 					<vbm:Spots click="onClickItem" posChangeable="true"
 						scaleChangeable="false" contextMenu="onContextMenuItem" 
-						items="{/Spots/items}">
+						items="{ViewModel>/Spots/items}">
 						<vbm:items>
-							<vbm:Spot id="Spot" position="{pos}" tooltip="{tooltip}"
-								type="{type}" text="{text}" contentOffset="{contentOffset}"
+							<vbm:Spot id="Spot" position="{ViewModel>pos}" tooltip="{ViewModel>tooltip}"
+								type="{ViewModel>type}" text="{ViewModel>text}" contentOffset="{ViewModel>contentOffset}"
 								click="onClickSpot" >
 							</vbm:Spot>
 						</vbm:items>
 					</vbm:Spots>
 		
-		
-				<vbm:legend  items="{/LegendItems}" >
-				<vbm:Legend id="legend" caption="Legend" click="onLegendClick">
+					<vbm:regions> 
+						<vbm:Region 
+						   code="{ViewModel>code}" 
+						   color="{ViewModel>color}" 
+						   tooltip="{ViewModel>region}"
+						   select="{ViewModel>select}">
+						</vbm:Region>
+					 </vbm:regions>
+					 
+				<vbm:legend  items="{ViewModel>/LegendItems}" >
+				<vbm:Legend id="legend" caption="Legend" click="onLegendItemClick">
 					<vbm:LegendItem color= "rgb(92,186,230)"  text="Central Europe" />
 					<vbm:LegendItem  color=  "rgb(182,217,87)" text="Eastern Europe"  />
 					<vbm:LegendItem color=  "rgb(250,195,100)" text= "Southern Europe" />

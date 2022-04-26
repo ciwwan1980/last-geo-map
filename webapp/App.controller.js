@@ -10,9 +10,13 @@ sap.ui.define([
 	return Controller.extend("GeoMapSpots.App", {
 		onInit: function () {
 			
-			var GeoMapData = model.createMyJSONModel("models/mockdata/data.json");
-         	this.getView().setModel(GeoMapData);
+			//var GeoMapData = model.createMyJSONModel("models/mockdata/data.json");
+         	//this.getView().setModel(GeoMapData);
 
+
+			this.oModel = new sap.ui.model.json.JSONModel("models/mockdata/data.json");
+			// this.oModel.setData(MapData);
+			this.getView().setModel(this.oModel, "ViewModel");
 			// set the device model
 			var oDeviceModel = new JSONModel(Device);
 			oDeviceModel.setDefaultBindingMode("OneWay");
@@ -43,25 +47,30 @@ sap.ui.define([
 			}
 		},
 
-		// onLegendItemClick: function ( e )
-		
-		// {
-		// 	sap.m.MessageToast.show( "onLegendItemClick; clicked on  " + e.getParameters().id);
+		onLegendItemClick: function ( e )
+		{
+			// sap.m.MessageToast.show( "onLegendItemClick; clicked on  " + e.getParameters().id  );
+			//var oModel = this.getView().getModel();
+			var sLegendRegionText = this.oModel.getProperty("/LegendItems/" + e.getParameter("row") + "/text");
+			//var sLegendRegionText = this.oModel.getProperty("/LegendItems/" + e.getParameter("row")).text;
+
+			//var aRegionProperties = this.oModel.getData().regionProperties;
+			var aRegionProperties = this.oModel.getProperty("/regionProperties");
 			
-		// 	for ( var i = 0; i < oModel.regionProperties.length; ++i )
-		// 	{
-		// 		var txt = "/regionProperties/" + i + "/text";
-		// 		var sel = "/regionProperties/" + i + "/select";
-		// 		var test = oModel.getProperty( txt ); 
-		// 		var row = e.oSource.getText();
-		// 		if ( test == row ){
-		// 			oModel.setProperty( sel, true );
-		// 		}
-		// 		else{
-		// 			oModel.setProperty( sel, false );
-		// 		}
-		// 	}
-		// },
+			for ( var i = 0; i < aRegionProperties.length; ++i )
+			{
+				var sTextBindingPath = "/regionProperties/" + i + "/text";
+				var sSelBindingPath = "/regionProperties/" + i + "/select";
+				var sRegtionText = this.oModel.getProperty( sTextBindingPath ); 
+				//var row = e.oSource.getText();
+				if ( sRegtionText === sLegendRegionText ){
+					this.oModel.setProperty( sSelBindingPath, true );
+				}
+				else{
+					this.oModel.setProperty( sSelBindingPath, false );
+				}
+			}
+		},
 
 		
 		onDropItem: function (evt) {

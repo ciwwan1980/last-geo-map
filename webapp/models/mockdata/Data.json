@@ -25,8 +25,9 @@
 				"type": "Warning",
 				"text": "123"
 			}
-		], 
-		"regionProperties" :
+		]
+	}, 
+	"regionProperties" :
 		[
 			{ "code": "DE", "region" : "Germany" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":true },
 			{ "code": "CZ", "region" : "Czech Republic" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
@@ -66,5 +67,6 @@
 		{ "color" : "rgb(250,195,100)",  "text": "Southern Europe" },
 		{ "color" : "rgb(140,211,255)",  "text": "Western Europe" }
 	]	
-	}
+
+		
 }
