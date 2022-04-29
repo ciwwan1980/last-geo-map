@@ -59,7 +59,21 @@ displayBlock="true">
 						routetype="Geodesic" lineDash="10;5" click="onClickRoute"
 						contextMenu="onContextMenuRoute" />
 				</vbm:Routes>
-				
+		
+				<vbm:Circles items="{ViewModel>/Circles}" click="onClickItem"
+					contextMenu="onContextMenuItem">
+					<vbm:Circle position="{A}" tooltip="{D}" radius="{E}"
+						color="rgba(92,186,230,0.6)" colorBorder="rgb(255,255,255)"
+						hotDeltaColor="rgba(92,186,230,0.8)" click="onClickCircle"
+						contextMenu="onContextMenuCircle" />
+				</vbm:Circles>
+				<vbm:GeoCircles items="{ViewModel>/CirclesGeoDist}" click="onClickItem"
+					contextMenu="onContextMenuItem">
+					<vbm:GeoCircle position="{A}" tooltip="{D}" radius="{E}"
+						color="rgba(190,217,87,0.6)" colorBorder="rgb(255,255,255)"
+						hotDeltaColor="rgba(182,217,87,0.8)" click="onClickGeoCircle"
+						contextMenu="onContextMenuCircle" />
+				</vbm:GeoCircles>
 			</vbm:vos>
 			<vbm:regions> 
 				<vbm:Region 
@@ -78,7 +92,8 @@ displayBlock="true">
 					<vbm:LegendItem  color=  "rgb(182,217,87)" text="Eastern Europe"  />
 					<vbm:LegendItem color=  "rgb(250,195,100)" text= "Southern Europe" />
 					<vbm:LegendItem color=  "rgb(140,211,255)" text= "Western Europe" />
-					
+					<vbm:LegendItem text="Circle – radius in px" color="rgba(92,186,230,0.6)"/>
+					<vbm:LegendItem text="Geocircle – radius in meters" color="rgba(182,217,87,0.6)" />
 				</vbm:Legend>
 			</vbm:legend>
 		

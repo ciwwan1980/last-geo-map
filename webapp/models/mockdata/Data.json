@@ -67,6 +67,7 @@
 		{ "color" : "rgb(250,195,100)",  "text": "Southern Europe", "id":2  },
 		{ "color" : "rgb(140,211,255)",  "text": "Western Europe", "id":3 }
 	]	,
+	
 	"Circles": 
 		[
 			{

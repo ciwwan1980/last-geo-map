@@ -71,6 +71,7 @@ sap.ui.define([
 				}
 			}
 		},
+		
 
 	// 	onLegendItemClick: function( e )
 	// {
@@ -102,6 +103,17 @@ sap.ui.define([
 		onCloseDetail: function (evt) {
 			MessageToast.show("onCloseDetail" + this);
 		},
+		
+		onClickCircle: function (evt)	{
+			evt.getSource().openDetailWindow("Circle", "0", "0" );   
+			detailContent = evt.getSource().getTooltip();
+		},
+		
+		onClickGeoCircle: function (evt)	{
+			evt.getSource().openDetailWindow("Geo Circle", "0", "0" );   
+			detailContent = evt.getSource().getTooltip();
+		},
+
 
 	});
 
