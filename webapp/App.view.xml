@@ -35,34 +35,45 @@ displayBlock="true">
 
 
 		<l:flexContent>
-
 			<vbm:AnalyticMap id="vbi" width="100%" 
 				height="100%" initialZoom="1" 
 				regions="{ViewModel>/regionProperties}" 
 			 >
-		
-					<vbm:Spots click="onClickItem" posChangeable="true"
-						scaleChangeable="false" contextMenu="onContextMenuItem" 
-						items="{ViewModel>/Spots/items}">
-						<vbm:items>
-							<vbm:Spot id="Spot" position="{ViewModel>pos}" tooltip="{ViewModel>tooltip}"
-								type="{ViewModel>type}" text="{ViewModel>text}" contentOffset="{ViewModel>contentOffset}"
-								click="onClickSpot" >
-							</vbm:Spot>
-						</vbm:items>
-					</vbm:Spots>
-		
-					<vbm:regions> 
-						<vbm:Region 
-						   code="{ViewModel>code}" 
-						   color="{ViewModel>color}" 
-						   tooltip="{ViewModel>region}"
-						   select="{ViewModel>select}">
-						</vbm:Region>
-					 </vbm:regions>
+			<vbm:Spots click="onClickItem" posChangeable="true"
+				scaleChangeable="true" contextMenu="onContextMenuItem" 
+				items="{ViewModel>/Spots/items}">
+				<vbm:items>
+					<vbm:Spot id="Spot" position="{ViewModel>pos}" tooltip="{ViewModel>tooltip}"
+						type="{ViewModel>type}" text="{ViewModel>text}"
+						click="onClickSpot" >
+					</vbm:Spot>
+				</vbm:items>
+			</vbm:Spots>
+			<vbm:vos>
+				<vbm:Routes>
+					<vbm:Route position="37.622882;55.755202;0; 77.1024902;28.7040592;0"
+						color="rgb(117,148,34)" colorBorder="rgb(255,255,255)" linewidth="3"
+						routetype="Geodesic" click="onClickRoute" contextMenu="onContextMenuRoute" />
+					<vbm:Route position="37.622882;55.755202;0; 116.407072;39.906235;0"
+						color="rgb(92,186,230)" colorBorder="rgb(255,255,255)" linewidth="3"
+						routetype="Geodesic" lineDash="10;5" click="onClickRoute"
+						contextMenu="onContextMenuRoute" />
+				</vbm:Routes>
+				
+			</vbm:vos>
+			<vbm:regions> 
+				<vbm:Region 
+					
+					code="{ViewModel>code}" 
+					color="{ViewModel>color}" 
+					tooltip="{ViewModel>region}"
+					select="{ViewModel>select}">
+				</vbm:Region>	
+			</vbm:regions>
 					 
-				<vbm:legend  items="{ViewModel>/LegendItems}" >
-				<vbm:Legend id="legend" caption="Legend" click="onLegendItemClick">
+			<vbm:legend  items="{ViewModel>/LegendItems}"   >
+				<vbm:Legend id="legend" caption="Select regions" click="onLegendItemClick">
+				
 					<vbm:LegendItem color= "rgb(92,186,230)"  text="Central Europe" />
 					<vbm:LegendItem  color=  "rgb(182,217,87)" text="Eastern Europe"  />
 					<vbm:LegendItem color=  "rgb(250,195,100)" text= "Southern Europe" />
@@ -70,7 +81,7 @@ displayBlock="true">
 					
 				</vbm:Legend>
 			</vbm:legend>
-			
+		
 			</vbm:AnalyticMap>
 		</l:flexContent>
 	</l:FixFlex>

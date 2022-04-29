@@ -29,8 +29,8 @@
 	}, 
 	"regionProperties" :
 		[
-			{ "code": "DE", "region" : "Germany" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":true },
-			{ "code": "CZ", "region" : "Czech Republic" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
+			{ "code": "DE", "region" : "Germany" , "color": "rgb(10,186,230)",  "text": "Central Europe", "select":true },
+			{ "code": "CZ", "region" : "Czech Republic" , "color": "rgb(122,186,230)",  "text": "Central Europe", "select":false },
 			{ "code": "PL", "region" : "Poland" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
 			{ "code": "SK", "region" : "Slovakia" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
 			{ "code": "HU", "region" : "Hungary" , "color": "rgb(92,186,230)",  "text": "Central Europe", "select":false },
@@ -62,11 +62,98 @@
 		],
 "LegendItems" :
 	[
-		{ "color" : "rgb(92,186,230)",  "text": "Central Europe" },
-		{ "color" : "rgb(182,217,87)",  "text": "Eastern Europe" },
-		{ "color" : "rgb(250,195,100)",  "text": "Southern Europe" },
-		{ "color" : "rgb(140,211,255)",  "text": "Western Europe" }
-	]	
+		{ "color" : "rgb(00,186,230)",  "text": "Central Europe", "id":0 },
+		{ "color" : "rgb(300,000,87)",  "text": "Eastern Europe","id":1  },
+		{ "color" : "rgb(250,195,100)",  "text": "Southern Europe", "id":2  },
+		{ "color" : "rgb(140,211,255)",  "text": "Western Europe", "id":3 }
+	]	,
+	"Circles": 
+		[
+			{
+				"VB:ix": "0 ",
+				"VB:s": "0",
+				"A": "-4.251685;55.864227;0",    
+				"D": "Circle: Glasgow",
+				"C": "rgb(255,255,255)",
+				"E": "60",
+				"G": "40"
+			},
+			{
+				"VB:ix": "1 ",
+				"VB:s": "0",
+				"A": "10.751471;59.916407;0",   
+				"D": "Circle: Oslo",
+				"C": "rgb(255,255,255)",
+				"E": "40",
+				"G": "40"
+			},
+			{
+				"VB:ix": "2 ",
+				"VB:s": "0",
+				"A": "12.500292;41.896528;0",   
+				"D": "Circle: Rome",
+				"C": "rgb(255,255,255)",
+				"E": "50",
+				"G": "30"
+			},
+			{
+				"VB:ix": "3 ",
+				"VB:s": "0",
+				"A": "-0.579446;44.837502;0",   
+				"D": "Circle: Bordeaux",
+				"C": "rgb(255,255,255)",
+				"E": "30",
+				"G": "100"
+			}
+		],
+	"CirclesGeoDist": 
+		[
+			{
+				"VB:ix": "0 ",
+				"VB:s": "0",
+				"A": "16.374910;48.208446;0",
+				"D": "GeoCircle: Vienna",
+				"C": "rgb(255,255,255)",
+				"E": "50000",
+				"G": "40"
+			},
+			{
+				"VB:ix": "1 ",
+				"VB:s": "0",
+				"A": "14.436035;50.064192;0",
+				"D": "GeoCircle: Prague",
+				"C": "rgb(255,255,255)",
+				"E": "40000",
+				"G": "40"
+			},
+			{
+				"VB:ix": "2 ",
+				"VB:s": "0",
+				"A": "2.329102;48.879167;0",
+				"D": "GeoCircle: Paris",
+				"C": "rgb(255,255,255)",
+				"E": "100000",
+				"G": "40"
+			},
+			{
+				"VB:ix": "3 ",
+				"VB:s": "0",
+				"A": "9.997559;53.566414;0",
+				"D": "GeoCircle: Hamburg",
+				"C": "rgb(255,255,255)",
+				"E": "100000",
+				"G": "40"
+			},
+			{
+				"VB:ix": "4 ",
+				"VB:s": "0",
+				"A": "19.929199;50.078295;0",
+				"D": "GeoCircle: Cracow",
+				"C": "rgb(255,255,255)",
+				"E": "100000",
+				"G": "40"
+			}
+		] 
 
 		
 }
