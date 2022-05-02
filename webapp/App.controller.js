@@ -19,6 +19,37 @@ sap.ui.define([
 			var oDeviceModel = new JSONModel(Device);
 			oDeviceModel.setDefaultBindingMode("OneWay");
 			this.getView().setModel(oDeviceModel, "device");
+			var oGeoMap = this.getView().byId("vbi");
+			var oMapConfig = {
+				"MapProvider": [{
+				"name": "HEREMAPS",
+				"type": "",
+				"description": "",
+				"tileX": "256",
+				"tileY": "256",
+				"maxLOD": "20",
+				"copyright": "Tiles Courtesy of HERE Maps",
+				"Source": [{
+				"id": "s1",
+				"url": "https://1.base.maps.cit.api.here.com/maptile/2.1/maptile/newest/reduced.day/{LOD}/{X}/{Y}/256/png8?app_id=YOUR_APP_ID&app_code=YOUR_APP_CODE"
+				}, {
+				"id": "s2",
+				"url": "https://2.base.maps.cit.api.here.com/maptile/2.1/maptile/newest/reduced.day/{LOD}/{X}/{Y}/256/png8?app_id=YOUR_APP_ID&app_code=YOUR_APP_CODE"
+				}
+				]
+				}],
+				"MapLayerStacks": [{
+				"name": "DEFAULT",
+				"MapLayer": {
+				"name": "layer1",
+				"refMapProvider": "HEREMAPS",
+				"opacity": "1.0",
+				"colBkgnd": "RGB(255,255,255)"
+				}
+				}]
+				};
+				oGeoMap.setMapConfiguration(oMapConfig);
+				oGeoMap.setRefMapLayerStack("DEFAULT");
 
 		},
 
@@ -53,6 +84,7 @@ sap.ui.define([
 			var sLegendRegionText = this.oModel.getProperty("/LegendItems/" + e.getParameter("row") + "/text");
 			//var sLegendRegionText = this.oModel.getProperty("/LegendItems/" + e.getParameter("row")).text;
 			
+			sap.m.MessageToast.show( "onLegendItemClick; clicked on " + e.getParameters().id);
 			//var aRegionProperties = this.oModel.getData().regionProperties;
 			var aRegionProperties = this.oModel.getProperty("/regionProperties");
 			for ( var i = 0; i < aRegionProperties.length; ++i )	{
@@ -60,7 +92,6 @@ sap.ui.define([
 				var sTextBindingPath = "/regionProperties/" + i + "/text";
 				var sSelBindingPath = "/regionProperties/" + i + "/select";
 				var sRegtionText = this.oModel.getProperty( sTextBindingPath ); 
-				console.log( "onLegendItemClick; clicked on " + e.getParameters().i);
 				//var row = e.oSource.getText();
 				if ( sRegtionText === sLegendRegionText ){
 					
@@ -103,7 +134,7 @@ sap.ui.define([
 		onCloseDetail: function (evt) {
 			MessageToast.show("onCloseDetail" + this);
 		},
-		
+
 		onClickCircle: function (evt)	{
 			evt.getSource().openDetailWindow("Circle", "0", "0" );   
 			detailContent = evt.getSource().getTooltip();

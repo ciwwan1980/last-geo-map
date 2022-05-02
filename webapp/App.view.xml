@@ -6,7 +6,8 @@ xmlns="sap.m"
 xmlns:vbm="sap.ui.vbm" 
 xmlns:l="sap.ui.layout" 
 height="100%"
-displayBlock="true">
+displayBlock="true"
+xmlns:html="http://www.w3.org/1999/xhtml">
 	<l:FixFlex class="fixFlexFixedSize">
 		<l:fixContent>
 			<Panel expandable="true" 
