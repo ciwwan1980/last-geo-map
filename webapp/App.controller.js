@@ -11,7 +11,7 @@ sap.ui.define([
 	return Controller.extend("GeoMapSpots.App", {
 		onInit: function () {
 			
-			
+		
 			this.oModel = model.createMyJSONModel("models/mockdata/data.json");
 			
 			this.getView().setModel(this.oModel, "ViewModel");
@@ -19,6 +19,7 @@ sap.ui.define([
 			var oDeviceModel = new JSONModel(Device);
 			oDeviceModel.setDefaultBindingMode("OneWay");
 			this.getView().setModel(oDeviceModel, "device");
+			
 			var oGeoMap = this.getView().byId("vbi");
 			var oMapConfig = {
 				"MapProvider": [{
@@ -80,12 +81,15 @@ sap.ui.define([
 
 		onLegendItemClick: function ( e )
 		{
+			// debugger;
 			//var oModel = this.getView().getModel();
 			var sLegendRegionText = this.oModel.getProperty("/LegendItems/" + e.getParameter("row") + "/text");
+			console.log(sLegendRegionText, "sLegendRegionText------------------------")
 			//var sLegendRegionText = this.oModel.getProperty("/LegendItems/" + e.getParameter("row")).text;
 			
 			sap.m.MessageToast.show( "onLegendItemClick; clicked on " + e.getParameters().id);
 			//var aRegionProperties = this.oModel.getData().regionProperties;
+			// console.log(e.getParameters().id, "id")
 			var aRegionProperties = this.oModel.getProperty("/regionProperties");
 			for ( var i = 0; i < aRegionProperties.length; ++i )	{
 				
@@ -102,7 +106,10 @@ sap.ui.define([
 				}
 			}
 		},
-		
+		onLegendClick:function ( e )
+	{
+		sap.m.MessageToast.show( "LegendClick; clicked on  " + e.getParameters().id );
+	},
 
 	// 	onLegendItemClick: function( e )
 	// {
@@ -129,6 +136,8 @@ sap.ui.define([
 
 		onClickSpot: function (evt) {
 			evt.getSource().openDetailWindow("My Detail Window");
+			console.log(evt.getSource().getBindingContext("ViewModel").oModel.mContexts, "evt.getSource()----------"); 
+			console.log(evt.getSource().getBindingContext("ViewModel").getObject(), "here is getObject()")
 		},
 
 		onCloseDetail: function (evt) {

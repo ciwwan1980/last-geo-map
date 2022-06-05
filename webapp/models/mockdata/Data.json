@@ -24,6 +24,13 @@
 				"tooltip": "Beijing",
 				"type": "Warning",
 				"text": "123"
+			}, 
+
+			{
+				"pos": "-30.407072;39.906235;0",
+				"tooltip": "Error",
+				"type": "Inactive",
+				"text": "here i shall press on My Details Windows, to see the getObject()"
 			}
 		]
 	}, 
@@ -65,9 +72,8 @@
 		{ "color" : "rgb(00,186,230)",  "text": "Central Europe", "id":0 },
 		{ "color" : "rgb(300,000,87)",  "text": "Eastern Europe","id":1  },
 		{ "color" : "rgb(250,195,100)",  "text": "Southern Europe", "id":2  },
-		{ "color" : "rgb(140,211,255)",  "text": "Western Europe", "id":3 }
-	]	,
-	
+		{ "color" : "rgb(140,211,255)",  "text": "Western Europe", "id":3  }
+	], 
 	"Circles": 
 		[
 			{
@@ -85,8 +91,8 @@
 				"A": "10.751471;59.916407;0",   
 				"D": "Circle: Oslo",
 				"C": "rgb(255,255,255)",
-				"E": "40",
-				"G": "40"
+				"E": "10",
+				"G": "10"
 			},
 			{
 				"VB:ix": "2 ",
@@ -154,7 +160,7 @@
 				"E": "100000",
 				"G": "40"
 			}
-		] 
-
-		
+		]	
+	
+	
 }

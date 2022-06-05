@@ -8,7 +8,11 @@ xmlns:l="sap.ui.layout"
 height="100%"
 displayBlock="true"
 xmlns:html="http://www.w3.org/1999/xhtml">
+
+
 	<l:FixFlex class="fixFlexFixedSize">
+
+	
 		<l:fixContent>
 			<Panel expandable="true" 
 				headerText="Description">
@@ -34,8 +38,9 @@ xmlns:html="http://www.w3.org/1999/xhtml">
 			</Panel>
 		</l:fixContent>
 
-
+	
 		<l:flexContent>
+			
 			<vbm:AnalyticMap id="vbi" width="100%" 
 				height="100%" initialZoom="1" 
 				regions="{ViewModel>/regionProperties}" 
@@ -50,6 +55,8 @@ xmlns:html="http://www.w3.org/1999/xhtml">
 					</vbm:Spot>
 				</vbm:items>
 			</vbm:Spots>
+
+
 			<vbm:vos>
 				<vbm:Routes>
 					<vbm:Route position="37.622882;55.755202;0; 77.1024902;28.7040592;0"
@@ -61,20 +68,13 @@ xmlns:html="http://www.w3.org/1999/xhtml">
 						contextMenu="onContextMenuRoute" />
 				</vbm:Routes>
 		
-				<vbm:Circles items="{ViewModel>/Circles}" click="onClickItem"
-					contextMenu="onContextMenuItem">
-					<vbm:Circle position="{A}" tooltip="{D}" radius="{E}"
-						color="rgba(92,186,230,0.6)" colorBorder="rgb(255,255,255)"
-						hotDeltaColor="rgba(92,186,230,0.8)" click="onClickCircle"
-						contextMenu="onContextMenuCircle" />
-				</vbm:Circles>
-				<vbm:GeoCircles items="{ViewModel>/CirclesGeoDist}" click="onClickItem"
-					contextMenu="onContextMenuItem">
-					<vbm:GeoCircle position="{A}" tooltip="{D}" radius="{E}"
-						color="rgba(190,217,87,0.6)" colorBorder="rgb(255,255,255)"
-						hotDeltaColor="rgba(182,217,87,0.8)" click="onClickGeoCircle"
-						contextMenu="onContextMenuCircle" />
-				</vbm:GeoCircles>
+		
+					<vbm:Circles items="{ViewModel>/Circles}" click="onClickItem"
+						contextMenu="onContextMenuItem">
+						<vbm:Circle position="{A}" tooltip="{D}" radius="{E}"
+							 />
+					</vbm:Circles>
+				
 			</vbm:vos>
 			<vbm:regions> 
 				<vbm:Region 
@@ -86,7 +86,7 @@ xmlns:html="http://www.w3.org/1999/xhtml">
 				</vbm:Region>	
 			</vbm:regions>
 					 
-			<vbm:legend  items="{ViewModel>/LegendItems}"   >
+			<vbm:legend  items="{ViewModel>/LegendItems}" >
 				<vbm:Legend id="legend" caption="Select regions" click="onLegendItemClick">
 				
 					<vbm:LegendItem color= "rgb(92,186,230)"  text="Central Europe" />
@@ -95,7 +95,10 @@ xmlns:html="http://www.w3.org/1999/xhtml">
 					<vbm:LegendItem color=  "rgb(140,211,255)" text= "Western Europe" />
 					<vbm:LegendItem text="Circle – radius in px" color="rgba(92,186,230,0.6)"/>
 					<vbm:LegendItem text="Geocircle – radius in meters" color="rgba(182,217,87,0.6)" />
+					
+
 				</vbm:Legend>
+				
 			</vbm:legend>
 		
 			</vbm:AnalyticMap>
